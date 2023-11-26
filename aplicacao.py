@@ -1,10 +1,12 @@
 import mysql.connector
 from enum import Enum
-
+import os
 
 class E(Enum):
     OPCAO_INVALIDA = 3
 
+def clear_screen():
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 def tipoUsuario():
     print("[1] - Usuário")
@@ -12,7 +14,7 @@ def tipoUsuario():
     print("[3] - Sair")
 
     option = int(input("Opção: "))
-
+    clear_screen()
     return option
 
 
@@ -24,6 +26,7 @@ def crudPannel(option):
             print("[3] - Livros disponiveis")
             print("[4] - Sair")
             option = int(input("Opção: "))
+            clear_screen()
             return option
 
         case 2:
@@ -31,6 +34,7 @@ def crudPannel(option):
             print("[2] - Remover livro")
             print("[3] - Sair")
             option = int(input("Opção: "))
+            clear_screen()
             return option
 
         case 3:
