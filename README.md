@@ -1,8 +1,14 @@
 # Passo a passo para executar o container
 
-Os seguintes comandos devem ser executados em sequencia, aguardando serem 100% finalizados antes de inserir o próximo?
+Os seguintes comandos devem ser executados em sequencia, aguardando serem 100% finalizados antes de inserir o próximo:
 
-(ainda a adicionar)
+docker-compose up
+docker-compose down
+docker-compose up
+docker compose create
+docker compose start
+docker compose exec -t pythonapp sh
+python aplicacao.py
 
 # Operações CRUD
 
