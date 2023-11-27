@@ -28,16 +28,11 @@ CREATE TABLE alugueis (
 -- Script de inserção de dados
 
 INSERT INTO usuarios (nome, email) VALUES
-('Usuário 1', 'usuario1@email.com'),
-('Usuário 2', 'usuario2@email.com'),
-('Usuário 3', 'usuario3@email.com');
+('lucas', 'usuario1@email.com'),
+('fernando', 'usuario2@email.com'),
+('jose', 'usuario3@email.com');
 
 INSERT INTO livros (titulo, autor, status) VALUES
-('Livro 1', 'Autor 1', 'Disponível'),
-('Livro 2', 'Autor 2', 'Disponível'),
-('Livro 3', 'Autor 3', 'Disponível');
-
-INSERT INTO alugueis (usuario_id, livro_id, data_aluguel) VALUES
-(1, 1, '2023-11-23'),
-(2, 2, '2023-11-24'),
-(3, 3, '2023-11-25');
+('romeu e julieta', 'Shakespeare', 'Disponível'),
+('assim falou zaratrusta', 'Nietzsche', 'Disponível'),
+('diario de um banana', 'Jeff', 'Disponível');

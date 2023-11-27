@@ -120,47 +120,53 @@ def removerLivro():
 
 
 # -------------------------- banco --------------------------
-"""conexao = mysql.connector.connect(
-    host="",
-    user="",
-    password="",
-    database=""
+conexao = mysql.connector.connect(
+    host="mysql",
+    user="root",
+    password="root",
+    database="banco_blibli",
+    port="3306"
 )
 
-cursor = conexao.cursor()"""
+cursor = conexao.cursor()
+
+
+
 
 # -------------------------- banco --------------------------
 
 
 # -------------------------- crud --------------------------
-user_type = tipoUsuario()
-crud_pannel = crudPannel(user_type)
+while True:
+    user_type = tipoUsuario()
+    crud_pannel = crudPannel(user_type)
 
-if(user_type == 2):
-    if(crud_pannel == 1):
-        adicionarLivro()
-    elif(crud_pannel == 2):
-        removerLivro()
-    else:
-        exit()
+    if(user_type == 2):
+        if(crud_pannel == 1):
+            adicionarLivro()
+        elif(crud_pannel == 2):
+            removerLivro()
+        else:
+            exit()
 
-elif(user_type == 1):
-    if(crud_pannel == 1):
-        alugarLivro()
-    elif(crud_pannel == 2):
-        devolverLivro()
-    elif(crud_pannel == 3):
-        livrosDisponiveis()
-    else:
-        exit()
+    elif(user_type == 1):
+        if(crud_pannel == 1):
+            alugarLivro()
+        elif(crud_pannel == 2):
+            devolverLivro()
+        elif(crud_pannel == 3):
+            livrosDisponiveis()
+        else:
+            exit()
 
 
-try:
-    sql_inserting = "INSERT INTO nome_tabela (coluna1, coluna2, coluna3) VALUES (%s, %s, %s)"
-    data = ("valor_coluna1", "valor_coluna2", "valor_coluna3")
+# -------------------------- testes --------------------------
+
+"""try:
+    sql_inserting = "INSERT INTO usuarios (nome, email) VALUES (%s, %s)"
+    data = ('lucas', 'usuario1@email.com')
     cursor.execute(sql_inserting, data)
     conexao.commit()
-
     print("Dados inseridos com sucesso")
 
 except Exception as instancia:
@@ -169,3 +175,16 @@ except Exception as instancia:
 
 finally:
     print("fim de operação")
+
+try:
+    # SQL para selecionar livros disponíveis 
+    sql_disponiveis = "SELECT * FROM usuarios"
+    cursor.execute(sql_disponiveis)
+    livros = cursor.fetchall()
+
+    print("Livros disponíveis:")
+    for livro in livros:
+        print(f"Nome: {livro[0]}, email: {livro[1]}")
+
+except Exception as e:
+    print(f"Erro ao verificar livros disponíveis: {str(e)}")"""
